@@ -22,7 +22,8 @@
           <a href="{% url 'logout' %}" class="cta-button">Logout</a>
           {% else %}
           <a href="{% url 'login' %}" class="cta-button">Login</a>
-          {% endif %}
+          {% endif %}   
+
         </div>
       </nav>
     </header>
@@ -35,33 +36,20 @@
     </section>
 
     <section class="products" id="products">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        {% for product in products %}
-        <div class="product-card">
-          <div class="product-image">
-            {% if product.image %}
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" />
-            {% else %}
-            <img
-              src="{% static 'images/placeholder.jpg' %}"
-              alt="{{ product.name }}"
-            />
-            {% endif %}
-          </div>
-          <div class="product-info">
-            <h3>{{ product.name }}</h3>
-            <p class="price">${{ product.price }}</p>
-            <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart"
-              >Add to Cart</a
-            >
-          </div>
-        </div>
-        {% empty %}
-        <p>No products available.</p>
-        {% endfor %}
-      </div>
-    </section>
+      <h2>Contact</h2>
+      <p>
+        If you have any questions or need assistance, please feel free to reach out to us. Our customer service team is here to help you. 
+        <br />
+        You can contact us via phone or email:
+        <br />
+        <br />
+        Phone: +44 7504 216862
+        <br />
+        Email: b615263@leedscitycollege.ac.uk
+        <br />
+        <br />
+        We aim to respond to all inquiries within 24 hours. Thank you for choosing ShopStore!
+      </p>
     {% endblock %}
 
     <footer>
