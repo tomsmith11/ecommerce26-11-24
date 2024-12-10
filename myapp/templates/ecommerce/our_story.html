@@ -1,90 +1,21 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'ecommerce/styles.css' %}" />
-    <title>{% block title %}ShopStore{% endblock %}</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="logo">
-          <a href="{% url 'home' %}">ShopStore</a>
-        </div>
-        <div class="nav-links">
-          <a href="{% url 'home' %}">Home</a>
-          <a href="{% url 'products' %}">Products</a>
-          <a href="{% url 'about' %}">About</a>
-          <a href="{% url 'contact' %}">Contact</a>
-          {% if user.is_authenticated %}
-          <a href="{% url 'logout' %}" class="cta-button">Logout</a>
-          {% else %}
-          <a href="{% url 'login' %}" class="cta-button">Login</a>
-          {% endif %}   
+{% extends "base.html" %}
 
-        </div>
-      </nav>
-    </header>
+{% block title %}Returns - ShopStore{% endblock %}
 
-    {% block content %}
-    <section class="hero">
-      <h1>Welcome to ShopStore</h1>
-      <p>Discover amazing products at great prices</p>
-      <a href="{% url 'products' %}" class="cta-button">Shop Now</a>
-    </section>
-
-    <section class="products" id="products">
-      <h2>Our Story</h3>
-      <p>
-        Our journey began with a simple idea: to create a place where people could
-        find unique and high-quality products at affordable prices. Founded in
-        2020, ShopStore started as a small online shop with a handful of products.
-        Over the years, we have grown into a thriving e-commerce platform,
-        offering a wide range of items from fashion to electronics. Our commitment
-        to customer satisfaction and our passion for discovering new and exciting
-        products have been the driving forces behind our success. We believe in
-        the power of community and strive to build lasting relationships with our
-        customers. Thank you for being a part of our story.
-      </p>
-    {% endblock %}
-
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>About Us</h3>
-          <ul>
-            <li><a href="{% url 'our_story' %}">Our Story</a></li>
-            <li><a href="{% url 'careers' %}">Careers</a></li>
-            <li><a href="{% url 'press' %}">Press</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Customer Service</h3>
-          <ul>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
-            <li><a href="{% url 'shipping' %}">Shipping Info</a></li>
-            <li><a href="{% url 'returns' %}">Returns</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Connect With Us</h3>
-          <ul>
-            <li>
-              <a href="{{ social_links.facebook }}" target="_blank">Facebook</a>
-            </li>
-            <li>
-              <a href="{{ social_links.twitter }}" target="_blank">Twitter</a>
-            </li>
-            <li>
-              <a href="{{ social_links.instagram }}" target="_blank"
-                >Instagram</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+{% block content %}
+<section class="hero">
+    <h1>Our Story</h1>
+    <br />
+    <p>
+      Our journey began with a simple idea: to create a place where people could
+      find unique and high-quality products at affordable prices. Founded in
+      2020, ShopStore started as a small online shop with a handful of products.
+      Over the years, we have grown into a thriving e-commerce platform,
+      offering a wide range of items from fashion to electronics. Our commitment
+      to customer satisfaction and our passion for discovering new and exciting
+      products have been the driving forces behind our success. We believe in
+      the power of community and strive to build lasting relationships with our
+      customers. Thank you for being a part of our story.
+    </p>
+</section>
+{% endblock %}

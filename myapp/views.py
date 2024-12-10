@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User  # Use Django's User model
+from .models import Product
 # Create your views here.
 
 def register_view(request):  # Separate registration view
@@ -12,6 +13,9 @@ def register_view(request):  # Separate registration view
         email = request.POST.get('email')
         password = request.POST.get('password')
 
+        if User.objects.filter(email=email).exists():
+            return HttpResponse('Email already exists')
+
         # Create user using Django's User model
         user = User.objects.create_user(
             username=email,  # Using email as username
@@ -21,9 +25,7 @@ def register_view(request):  # Separate registration view
             last_name=last_name
         )
 
-        if User.objects.filter(email=email).exists():
-            return HttpResponse('Email already exists')
-
+        
         return redirect('login')
     return render(request, 'ecommerce/form/register.html')
 
@@ -55,7 +57,8 @@ def home(request):
   return render(request, 'ecommerce/home.html')
 
 def products(request):
-  return render(request, 'ecommerce/products.html') 
+    products = Product.objects.all()
+    return render(request, 'ecommerce/products.html', {'products': products})
 
 def about(request):
   return render(request, 'ecommerce/about.html')
@@ -71,3 +74,9 @@ def careers(request):
 
 def returns(request):
   return render(request, 'ecommerce/returns.html')
+
+def press(request):
+  return render(request, 'ecommerce/press.html')
+
+def shipping(request):
+  return render(request, 'ecommerce/shipping.html')

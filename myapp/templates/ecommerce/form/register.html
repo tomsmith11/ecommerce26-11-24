@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
-{% load static %}
+{% extends "base.html" %}
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form</title>
-    <!-- Your existing style section remains the same -->
-    <link rel="stylesheet" href="{% static 'ecommerce/form-styles.css' %}" />
-  </head>
-  <body>
-    <div class="container">
+{% block title %}Home - ShopStore{% endblock %}
+{% block content %}
+
+<section class="products" id="products">
+  <div class="container>">
+  <div class="container">
+
       <a href="{% url 'home' %}"><h3>Return to home</h3></a>
-
       <form
         class="registration-form"
         method="POST"
@@ -47,5 +43,6 @@
         </div>
       </form>
     </div>
+  </div>
   </body>
-</html>
+{% endblock %}
