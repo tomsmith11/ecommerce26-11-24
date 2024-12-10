@@ -58,8 +58,7 @@ def home(request):
 
 def products(request):
     products = Product.objects.all()
-    return render(request, 'ecommerce/products.html', {'products': products})
-
+    return render(request, 'ecommerce/products.html', {'products': Product.objects.all()})
 def about(request):
   return render(request, 'ecommerce/about.html')
 
