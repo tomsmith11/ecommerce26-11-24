@@ -1,11 +1,11 @@
-# django05_12_24
+# ecommerce26-11-24
 
-This is a django app I am making for college, it needs login logout functionality, along with a functional 
+This is a django app I am making for college, it needs login logout functionality, along with a functional
 product database which will store a couple products.
 
 ---
 
-### Guide for setup 
+### Guide for setup
 
 ### 1.
 
