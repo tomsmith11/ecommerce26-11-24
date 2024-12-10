@@ -30,6 +30,17 @@ header {
   z-index: 1000;
 }
 
+footer {
+  background-color: #333;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -160,13 +171,6 @@ nav {
 
 .add-to-cart:hover {
   background-color: #0056b3;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  padding: 2rem;
-  margin-top: 4rem;
 }
 
 .footer-content {
